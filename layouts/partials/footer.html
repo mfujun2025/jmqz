@@ -1,0 +1,52 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <span class="logo-icon">舒</span>
+          <span class="logo-name">{{ .Site.Params.siteName }}</span>
+        </div>
+        <p class="footer-desc">{{ .Site.Params.siteSubtitle }}，专注腿部健康，提供专业医用弹力袜产品与健康科普。</p>
+        <div class="footer-contact">
+          <p>客服热线：{{ .Site.Params.contactPhone }}</p>
+          <p>客服微信：{{ .Site.Params.contactWechat }}</p>
+          <p>工作时间：周一至周日 9:00-21:00</p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>产品中心</h4>
+        <ul>
+          <li><a href="{{ "/products/" | relURL }}">全部产品</a></li>
+          <li><a href="{{ "/products/" | relURL }}">一级压力（预防款）</a></li>
+          <li><a href="{{ "/products/" | relURL }}">二级压力（治疗款）</a></li>
+          <li><a href="{{ "/products/" | relURL }}">三级压力（术后款）</a></li>
+          <li><a href="{{ "/products/" | relURL }}">孕妇专用款</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>健康科普</h4>
+        <ul>
+          <li><a href="{{ "/blog/" | relURL }}">全部文章</a></li>
+          <li><a href="{{ "/blog/what-is-varicose-veins/" | relURL }}">什么是静脉曲张</a></li>
+          <li><a href="{{ "/blog/how-to-choose/" | relURL }}">如何选择压力等级</a></li>
+          <li><a href="{{ "/blog/wearing-guide/" | relURL }}">正确穿戴指南</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>关于我们</h4>
+        <ul>
+          <li><a href="{{ "/about/" | relURL }}">品牌介绍</a></li>
+          <li><a href="{{ "/contact/" | relURL }}">联系我们</a></li>
+          <li><a href="{{ "/about/" | relURL }}">资质证书</a></li>
+          <li><a href="{{ "/contact/" | relURL }}">售后服务</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p><strong>温馨提示：</strong>本站产品为二类医疗器械，静脉曲张袜仅作为辅助治疗手段，不能替代药物或手术治疗。如有严重症状，请及时就医。本站内容仅供健康科普参考，不构成诊疗建议。</p>
+    </div>
+    <div class="footer-bottom">
+      <p>© {{ now.Format "2006" }} {{ .Site.Params.siteName }} 版权所有 | <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">{{ .Site.Params.icp }}</a> | 医疗器械经营备案凭证：{{ .Site.Params.medicalLicense }}</p>
+    </div>
+  </div>
+</footer>

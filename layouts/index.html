@@ -1,0 +1,202 @@
+{{ define "main" }}
+
+<!-- Hero 区域 -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-badge">二类医疗器械 · 专业医用弹力袜</span>
+        <h1 class="hero-title">{{ .Params.heroTitle | default "科学压力梯度，守护腿部健康" }}</h1>
+        <p class="hero-subtitle">{{ .Params.heroSubtitle | default "舒脉康专业静脉曲张袜，覆盖一级预防、二级治疗、三级术后全场景，久站不累、久走不胀，让每一步都轻松。" }}</p>
+        <div class="hero-actions">
+          <a href="{{ "/products/" | relURL }}" class="btn btn-primary btn-lg">选购产品</a>
+          <a href="{{ "/blog/how-to-choose/" | relURL }}" class="btn btn-outline btn-lg">压力等级自测</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">3级</span>
+            <span class="stat-label">压力梯度</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">10万+</span>
+            <span class="stat-label">用户信赖</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">98%</span>
+            <span class="stat-label">好评率</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-placeholder">
+          <span>产品主图</span>
+          <small>替换为 static/images/hero-product.jpg</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 适用人群 -->
+<section class="section section-audience">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">你是否也有这些困扰？</h2>
+      <p class="section-subtitle">久站、久坐、孕期、术后，腿部压力无处不在</p>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-icon">👩‍⚕️</div>
+        <h3>久站人群</h3>
+        <p>教师、护士、导购、厨师，每天站立8小时以上，腿部酸胀水肿</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">💼</div>
+        <h3>久坐办公族</h3>
+        <p>长时间伏案工作，下肢血液循环不畅，容易引发静脉问题</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">🤰</div>
+        <h3>孕期准妈妈</h3>
+        <p>孕期体重增加、激素变化，下肢静脉压力增大，容易出现水肿和曲张</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">🏥</div>
+        <h3>术后恢复</h3>
+        <p>静脉曲张术后、长期卧床后，需要医用弹力袜辅助恢复和预防复发</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 精选产品 -->
+<section class="section section-products">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">精选产品</h2>
+      <p class="section-subtitle">按压力等级科学分类，选择适合你的那一款</p>
+    </div>
+    <div class="product-grid">
+      {{ range first 4 (where .Site.RegularPages "Section" "products") }}
+      <div class="product-card">
+        <div class="product-image">
+          {{ if .Params.image }}
+          <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+          {{ else }}
+          <div class="product-placeholder">产品图</div>
+          {{ end }}
+          {{ if .Params.badge }}<span class="product-badge">{{ .Params.badge }}</span>{{ end }}
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="product-desc">{{ .Params.summary | default .Summary | truncate 50 }}</p>
+          <div class="product-meta">
+            <span class="product-pressure">{{ .Params.pressure }}</span>
+            <span class="product-price">{{ .Params.price }}</span>
+          </div>
+          <div class="product-actions">
+            <a href="{{ .RelPermalink }}" class="btn btn-outline btn-sm">查看详情</a>
+            <a href="{{ .Params.buyUrl | default .Site.Params.shopUrl }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">立即购买</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="section-more">
+      <a href="{{ "/products/" | relURL }}" class="btn btn-outline">查看全部产品 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 为什么选择我们 -->
+<section class="section section-features">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">为什么选择舒脉康</h2>
+      <p class="section-subtitle">专业品质，值得信赖</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">✅</div>
+        <h3>医疗器械认证</h3>
+        <p>全部产品取得二类医疗器械注册证，符合国家医用标准，品质有保障</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📐</div>
+        <h3>精准压力梯度</h3>
+        <p>脚踝处压力最大，向上逐级递减，符合人体静脉血流动力学原理</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🌿</div>
+        <h3>透气亲肤面料</h3>
+        <p>采用医用级弹性面料，透气排汗，亲肤不致敏，四季可穿</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📏</div>
+        <h3>多尺码可选</h3>
+        <p>S/M/L/XL/XXL 全尺码覆盖，按腿围精准选择，压力更均匀</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🔄</div>
+        <h3>7天无理由退换</h3>
+        <p>未拆封产品支持7天无理由退换，尺码不合适免费换，购物无忧</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">👨‍⚕️</div>
+        <h3>专业客服指导</h3>
+        <p>客服团队经过专业培训，提供压力等级推荐、尺码测量、穿戴指导</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 最新科普 -->
+<section class="section section-blog">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">健康科普</h2>
+      <p class="section-subtitle">了解静脉曲张，科学护腿</p>
+    </div>
+    <div class="blog-grid">
+      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+      <article class="blog-card">
+        <div class="blog-image">
+          {{ if .Params.image }}
+          <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+          {{ else }}
+          <div class="blog-placeholder">📚</div>
+          {{ end }}
+        </div>
+        <div class="blog-info">
+          <div class="blog-meta">
+            <span class="blog-date">{{ .Date.Format "2006-01-02" }}</span>
+            {{ with .Params.categories }}<span class="blog-category">{{ index . 0 }}</span>{{ end }}
+          </div>
+          <h3 class="blog-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="blog-excerpt">{{ .Summary | truncate 80 }}</p>
+          <a href="{{ .RelPermalink }}" class="blog-more">阅读全文 →</a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    <div class="section-more">
+      <a href="{{ "/blog/" | relURL }}" class="btn btn-outline">查看更多文章 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-cta">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>不确定选哪款？</h2>
+      <p>添加客服微信，免费获取专业压力等级推荐和尺码测量指导</p>
+      <div class="cta-actions">
+        <a href="{{ "/contact/" | relURL }}" class="btn btn-primary btn-lg">联系客服</a>
+        <a href="{{ "/blog/how-to-choose/" | relURL }}" class="btn btn-outline btn-lg">自学选购指南</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

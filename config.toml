@@ -1,0 +1,75 @@
+baseURL = "https://www.jingmaiquzhang.cn/"
+languageCode = "zh-cn"
+title = "舒脉康 - 专业静脉曲张袜医用弹力袜"
+theme = ""
+enableRobotsTXT = true
+enableEmoji = true
+paginate = 10
+summaryLength = 60
+
+# 网站元信息
+[params]
+  siteName = "舒脉康"
+  siteSubtitle = "专业静脉曲张袜 · 医用弹力袜"
+  description = "舒脉康专注静脉曲张袜与医用弹力袜，提供一级/二级/三级压力梯度产品，覆盖久站人群、孕妇、术后恢复等场景。科学压力，舒适护腿。"
+  keywords = "静脉曲张袜,医用弹力袜,压力袜,孕妇静脉曲张袜,术后弹力袜,久站护腿袜"
+  author = "舒脉康"
+  # 客服微信/电话（显示在页头和页脚）
+  contactPhone = "400-XXX-XXXX"
+  contactWechat = "shumaikang2026"
+  # 电商购买链接（有赞/微盟店铺首页，产品页按钮可单独覆盖）
+  shopUrl = "https://your-shop.youzan.com"
+  # 备案号
+  icp = "京ICP备XXXXXXXX号"
+  # 医疗器械经营备案凭证号
+  medicalLicense = "京食药监械经营备XXXXXXXX号"
+
+# 导航菜单
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "产品中心"
+    url = "/products/"
+    weight = 2
+  [[menu.main]]
+    name = "科普百科"
+    url = "/blog/"
+    weight = 3
+  [[menu.main]]
+    name = "关于我们"
+    url = "/about/"
+    weight = 4
+  [[menu.main]]
+    name = "联系我们"
+    url = "/contact/"
+    weight = 5
+
+# 输出格式
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# 分类设置
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  pressure = "pressures"
+  audience = "audiences"
+
+# Markdown 渲染配置
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
+# 站点地图
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"

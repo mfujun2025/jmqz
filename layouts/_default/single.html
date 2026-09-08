@@ -1,0 +1,76 @@
+{{ define "main" }}
+<article class="single-page">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="{{ "/" | relURL }}">首页</a>
+      {{ if eq .Section "products" }}
+      <span>/</span><a href="{{ "/products/" | relURL }}">产品中心</a>
+      {{ else if eq .Section "blog" }}
+      <span>/</span><a href="{{ "/blog/" | relURL }}">科普百科</a>
+      {{ end }}
+      <span>/</span><span class="breadcrumb-current">{{ .Title }}</span>
+    </nav>
+
+    <header class="single-header">
+      <h1 class="single-title">{{ .Title }}</h1>
+      {{ if or .Date .Params.categories }}
+      <div class="single-meta">
+        {{ if .Date }}<span class="meta-date">{{ .Date.Format "2006-01-02" }}</span>{{ end }}
+        {{ with .Params.categories }}
+        {{ range . }}<span class="meta-category">{{ . }}</span>{{ end }}
+        {{ end }}
+        {{ with .Params.pressure }}<span class="meta-pressure">压力等级：{{ . }}</span>{{ end }}
+      </div>
+      {{ end }}
+    </header>
+
+    {{ if .Params.toc }}
+    <aside class="table-of-contents">
+      <h3>目录</h3>
+      {{ .TableOfContents }}
+    </aside>
+    {{ end }}
+
+    <div class="single-content">
+      {{ .Content }}
+    </div>
+
+    <!-- 产品页专属：购买区域 -->
+    {{ if eq .Section "products" }}
+    <section class="product-buy-box">
+      <div class="buy-box-inner">
+        <div class="buy-info">
+          <h3>{{ .Title }}</h3>
+          <div class="buy-price">{{ .Params.price }}</div>
+          <ul class="buy-specs">
+            {{ with .Params.pressure }}<li>压力等级：{{ . }}</li>{{ end }}
+            {{ with .Params.style }}<li>款式：{{ . }}</li>{{ end }}
+            {{ with .Params.sizes }}<li>可选尺码：{{ . }}</li>{{ end }}
+            {{ with .Params.registrationNo }}<li>医疗器械注册证号：{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+        <div class="buy-actions">
+          <a href="{{ .Params.buyUrl | default .Site.Params.shopUrl }}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">立即购买</a>
+          <a href="{{ "/contact/" | relURL }}" class="btn btn-outline btn-lg">咨询客服</a>
+          <p class="buy-note">未拆封支持7天无理由退换 | 全国包邮</p>
+        </div>
+      </div>
+    </section>
+    {{ end }}
+
+    <!-- 文章页专属：标签和上一篇下一篇 -->
+    {{ if eq .Section "blog" }}
+    {{ with .Params.tags }}
+    <div class="single-tags">
+      <span>标签：</span>
+      {{ range . }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
+    <nav class="single-pagination">
+      {{ with .PrevInSection }}<a href="{{ .RelPermalink }}" class="prev">← {{ .Title }}</a>{{ end }}
+      {{ with .NextInSection }}<a href="{{ .RelPermalink }}" class="next">{{ .Title }} →</a>{{ end }}
+    </nav>
+    {{ end }}
+  </div>
+</article>
+{{ end }}

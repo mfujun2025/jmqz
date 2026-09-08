@@ -1,0 +1,93 @@
+{{ define "main" }}
+<section class="list-page">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="{{ "/" | relURL }}">首页</a>
+      <span>/</span><span class="breadcrumb-current">{{ .Title }}</span>
+    </nav>
+
+    <header class="list-header">
+      <h1 class="list-title">{{ .Title }}</h1>
+      {{ with .Content }}<div class="list-description">{{ . }}</div>{{ end }}
+    </header>
+
+    <!-- 产品列表 -->
+    {{ if eq .Section "products" }}
+    <div class="product-filters">
+      <span class="filter-label">按压力等级：</span>
+      <a href="{{ "/products/" | relURL }}" class="filter-tag active">全部</a>
+      <a href="{{ "/pressures/一级压力/" | relURL }}" class="filter-tag">一级压力</a>
+      <a href="{{ "/pressures/二级压力/" | relURL }}" class="filter-tag">二级压力</a>
+      <a href="{{ "/pressures/三级压力/" | relURL }}" class="filter-tag">三级压力</a>
+    </div>
+    <div class="product-grid">
+      {{ range .Pages }}
+      <div class="product-card">
+        <div class="product-image">
+          {{ if .Params.image }}
+          <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+          {{ else }}
+          <div class="product-placeholder">产品图</div>
+          {{ end }}
+          {{ if .Params.badge }}<span class="product-badge">{{ .Params.badge }}</span>{{ end }}
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="product-desc">{{ .Params.summary | default .Summary | truncate 50 }}</p>
+          <div class="product-meta">
+            <span class="product-pressure">{{ .Params.pressure }}</span>
+            <span class="product-price">{{ .Params.price }}</span>
+          </div>
+          <div class="product-actions">
+            <a href="{{ .RelPermalink }}" class="btn btn-outline btn-sm">查看详情</a>
+            <a href="{{ .Params.buyUrl | default .Site.Params.shopUrl }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">立即购买</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- 博客列表 -->
+    {{ if eq .Section "blog" }}
+    <div class="blog-list">
+      {{ range .Pages }}
+      <article class="blog-list-item">
+        <div class="blog-list-image">
+          {{ if .Params.image }}
+          <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+          {{ else }}
+          <div class="blog-placeholder">📚</div>
+          {{ end }}
+        </div>
+        <div class="blog-list-content">
+          <div class="blog-meta">
+            <span class="blog-date">{{ .Date.Format "2006-01-02" }}</span>
+            {{ with .Params.categories }}<span class="blog-category">{{ index . 0 }}</span>{{ end }}
+          </div>
+          <h2 class="blog-list-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p class="blog-list-excerpt">{{ .Summary | truncate 120 }}</p>
+          <a href="{{ .RelPermalink }}" class="blog-more">阅读全文 →</a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- 通用列表（分类、标签等） -->
+    {{ if and (ne .Section "products") (ne .Section "blog") }}
+    <div class="generic-list">
+      {{ range .Pages }}
+      <div class="generic-item">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Summary | truncate 100 }}</p>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- 分页 -->
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</section>
+{{ end }}
