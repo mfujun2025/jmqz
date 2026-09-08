@@ -29,8 +29,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // 图片懒加载（浏览器原生支持时不做额外处理）
-  // 这里可以添加自定义的图片加载动画等
+  // 微信弹窗功能
+  const wechatModal = document.getElementById('wechatModal');
+  const wechatClose = document.getElementById('wechatClose');
+  const wechatOverlay = document.getElementById('wechatOverlay');
+
+  function openWechatModal() {
+    if (wechatModal) {
+      wechatModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeWechatModal() {
+    if (wechatModal) {
+      wechatModal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // 所有带 data-wechat 属性的元素点击打开弹窗
+  document.querySelectorAll('[data-wechat]').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      openWechatModal();
+    });
+  });
+
+  if (wechatClose) {
+    wechatClose.addEventListener('click', closeWechatModal);
+  }
+  if (wechatOverlay) {
+    wechatOverlay.addEventListener('click', closeWechatModal);
+  }
+  // ESC键关闭
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeWechatModal();
+  });
 
   console.log('舒脉康网站已加载');
 });

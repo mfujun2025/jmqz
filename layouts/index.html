@@ -96,7 +96,7 @@
           </div>
           <div class="product-actions">
             <a href="{{ .RelPermalink }}" class="btn btn-outline btn-sm">查看详情</a>
-            <a href="{{ .Params.buyUrl | default .Site.Params.shopUrl }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">立即购买</a>
+            <button class="btn btn-primary btn-sm" data-wechat>微信咨询下单</button>
           </div>
         </div>
       </div>

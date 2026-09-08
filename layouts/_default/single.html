@@ -50,9 +50,9 @@
           </ul>
         </div>
         <div class="buy-actions">
-          <a href="{{ .Params.buyUrl | default .Site.Params.shopUrl }}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">立即购买</a>
-          <a href="{{ "/contact/" | relURL }}" class="btn btn-outline btn-lg">咨询客服</a>
-          <p class="buy-note">未拆封支持7天无理由退换 | 全国包邮</p>
+          <button class="btn btn-primary btn-lg" data-wechat>微信咨询下单</button>
+          <a href="{{ "/contact/" | relURL }}" class="btn btn-outline btn-lg">查看联系方式</a>
+          <p class="buy-note">添加微信咨询尺码，确认后下单 | 未拆封支持7天无理由退换</p>
         </div>
       </div>
     </section>

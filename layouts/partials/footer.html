@@ -50,3 +50,18 @@
     </div>
   </div>
 </footer>
+
+<!-- 微信咨询弹窗 -->
+<div class="wechat-modal" id="wechatModal">
+  <div class="wechat-modal-overlay" id="wechatOverlay"></div>
+  <div class="wechat-modal-content">
+    <button class="wechat-modal-close" id="wechatClose" aria-label="关闭">&times;</button>
+    <h3 class="wechat-modal-title">微信咨询下单</h3>
+    <p class="wechat-modal-subtitle">扫码添加客服微信，咨询尺码、下单购买</p>
+    <div class="wechat-modal-qrcode">
+      <img src="{{ "images/wechat-qrcode.jpg" | relURL }}" alt="客服微信二维码">
+    </div>
+    <div class="wechat-modal-id">微信号：{{ .Site.Params.contactWechat }}</div>
+    <p class="wechat-modal-tip">长按二维码识别添加，或搜索微信号添加<br>工作时间：周一至周日 9:00-21:00</p>
+  </div>
+</div>

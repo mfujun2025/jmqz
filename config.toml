@@ -1,4 +1,4 @@
-baseURL = "https://mfujun2025.github.io/jmqz/"
+baseURL = "https://静脉曲张.cn/"
 languageCode = "zh-cn"
 title = "舒脉康 - 专业静脉曲张袜医用弹力袜"
 enableRobotsTXT = true
@@ -15,7 +15,7 @@ summaryLength = 60
   author = "舒脉康"
   # 客服微信/电话（显示在页头和页脚）
   contactPhone = "400-XXX-XXXX"
-  contactWechat = "shumaikang2026"
+  contactWechat = "mfujun"
   # 电商购买链接（有赞/微盟店铺首页，产品页按钮可单独覆盖）
   shopUrl = "https://your-shop.youzan.com"
   # 备案号
