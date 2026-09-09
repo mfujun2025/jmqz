@@ -12,6 +12,7 @@ pressures: ["一级压力"]
 audiences: ["久站人群", "办公族"]
 registrationNo: "京械注准20242090XXX"
 buyUrl: ""
+image: "/images/product-level1-zhongtong.jpg"
 toc: true
 ---
 

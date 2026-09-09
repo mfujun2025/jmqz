@@ -12,6 +12,7 @@ pressures: ["一级压力", "二级压力"]
 audiences: ["孕妇"]
 registrationNo: "京械注准20242090XXX"
 buyUrl: ""
+image: "/images/product-maternity.jpg"
 toc: true
 ---
 

@@ -12,6 +12,7 @@ pressures: ["二级压力"]
 audiences: ["静脉曲张患者", "术后恢复"]
 registrationNo: "京械注准20242090XXX"
 buyUrl: ""
+image: "/images/product-level2-changtong.jpg"
 toc: true
 ---
 
