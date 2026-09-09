@@ -5,6 +5,7 @@ enableRobotsTXT = true
 enableEmoji = true
 paginate = 10
 summaryLength = 60
+buildFuture = true
 
 # 网站元信息
 [params]
