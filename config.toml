@@ -24,10 +24,6 @@ buildFuture = true
   contactWechat = "mfujun"
   # 电商购买链接（有赞/微盟店铺首页，产品页按钮可单独覆盖）
   shopUrl = "https://your-shop.youzan.com"
-  # 备案号
-  icp = "京ICP备XXXXXXXX号"
-  # 医疗器械经营备案凭证号
-  medicalLicense = "京食药监械经营备XXXXXXXX号"
 
 # 导航菜单
 [menu]

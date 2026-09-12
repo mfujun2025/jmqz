@@ -148,8 +148,6 @@ languageCode = "zh-cn"
   contactPhone = "400-XXX-XXXX"      # 客服电话
   contactWechat = "your-wechat-id"    # 客服微信
   shopUrl = "https://your-shop.youzan.com"  # 电商店铺链接
-  icp = "京ICP备XXXXXXXX号"            # ICP备案号
-  medicalLicense = "京食药监械经营备XXXXXXXX号"  # 医疗器械经营备案号
 ```
 
 ### 修改导航菜单
