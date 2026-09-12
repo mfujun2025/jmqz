@@ -10,7 +10,12 @@ buildFuture = true
 # 网站元信息
 [params]
   siteName = "舒脉康"
+  siteSubtitle = "专业静脉曲张袜 · 医用弹力袜"[params]
+  siteName = "舒脉康"
   siteSubtitle = "专业静脉曲张袜 · 医用弹力袜"
+  # canonical 规范主机名：统一使用中文域名形式，与 CNAME 保持一致
+  canonicalHost = "https://静脉曲张.cn"
+  description = "舒脉康专注静脉曲张袜与医用弹力袜..."
   description = "舒脉康专注静脉曲张袜与医用弹力袜，提供一级/二级/三级压力梯度产品，覆盖久站人群、孕妇、术后恢复等场景。科学压力，舒适护腿。"
   keywords = "静脉曲张袜,医用弹力袜,压力袜,孕妇静脉曲张袜,术后弹力袜,久站护腿袜"
   author = "舒脉康"
