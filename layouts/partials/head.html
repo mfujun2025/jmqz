@@ -23,7 +23,7 @@
 
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Params.siteName }}{{ end }}</title>
 <!-- Canonical：统一到中文域名的规范 URL，避免中文域名/punycode 双形式被判重复 -->
-<link rel="canonical" href="{{ $canonicalURL | safeURL }}">
+{{ printf `<link rel="canonical" href="%s%s">` .Site.Params.canonicalHost .RelPermalink | safeHTML }}
 
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
