@@ -3,7 +3,7 @@
 <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description | default .Summary | truncate 160 }}{{ end }}">
 <meta name="keywords" content="{{ if .Params.tags }}{{ delimit .Params.tags "," }}{{ else }}{{ .Site.Params.keywords }}{{ end }}">
 <meta name="author" content="{{ .Site.Params.author }}">
-<meta name="robots" content="index, follow">
+{{ if eq .Section "tags" }}<meta name="robots" content="noindex, follow">{{ else }}<meta name="robots" content="index, follow">{{ end }}
 
 <!-- Open Graph -->
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
@@ -19,6 +19,8 @@
 <meta name="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description | default .Summary | truncate 160 }}{{ end }}">
 
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Params.siteName }}{{ end }}</title>
+<!-- Canonical：统一到中文域名的规范 URL，避免中文域名/punycode 双形式被判重复 -->
+<link rel="canonical" href="{{ .Site.Params.canonicalHost }}{{ .RelPermalink }}">
 
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
