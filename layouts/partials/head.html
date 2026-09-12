@@ -5,11 +5,14 @@
 <meta name="author" content="{{ .Site.Params.author }}">
 {{ if eq .Section "tags" }}<meta name="robots" content="noindex, follow">{{ else }}<meta name="robots" content="index, follow">{{ end }}
 
+<!-- 规范 URL：统一使用中文域名形式，避免「中文域名 / punycode / 百分号编码」多种写法被判成重复页面 -->
+{{ $canonicalURL := printf "%s%s" .Site.Params.canonicalHost .RelPermalink }}
+
 <!-- Open Graph -->
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
 <meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description | default .Summary | truncate 160 }}{{ end }}">
-<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:url" content="{{ $canonicalURL | safeURL }}">
 <meta property="og:site_name" content="{{ .Site.Params.siteName }}">
 {{ if .Params.image }}<meta property="og:image" content="{{ .Params.image | absURL }}">{{ end }}
 
@@ -20,7 +23,7 @@
 
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Params.siteName }}{{ end }}</title>
 <!-- Canonical：统一到中文域名的规范 URL，避免中文域名/punycode 双形式被判重复 -->
-<link rel="canonical" href="{{ .Site.Params.canonicalHost }}{{ .RelPermalink }}">
+<link rel="canonical" href="{{ $canonicalURL | safeURL }}">
 
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
@@ -36,7 +39,7 @@
   "@context": "https://schema.org",
   "@type": "MedicalOrganization",
   "name": "{{ .Site.Params.siteName }}",
-  "url": "{{ .Site.BaseURL }}",
+  "url": "{{ $canonicalURL }}",
   "description": "{{ .Site.Params.description }}",
   "telephone": "{{ .Site.Params.contactPhone }}"
 }
