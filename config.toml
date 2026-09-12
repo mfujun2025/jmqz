@@ -1,7 +1,10 @@
 baseURL = "https://静脉曲张.cn/"
 languageCode = "zh-cn"
 title = "舒脉康 - 专业静脉曲张袜医用弹力袜"
-enableRobotsTXT = true
+# 注意：必须为 false。Hugo 内置的 robots.txt 模板只有一行「User-agent: *」，
+# 开启后会覆盖 static/robots.txt，导致其中的 Sitemap 声明丢失。
+# 这里改用 static/robots.txt 作为唯一来源。
+enableRobotsTXT = false
 enableEmoji = true
 paginate = 10
 summaryLength = 60
