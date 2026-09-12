@@ -10,7 +10,6 @@ summary: "二级压力长筒款弹力袜，压力覆盖至大腿，适合静脉�
 categories: ["二级压力", "长筒款"]
 pressures: ["二级压力"]
 audiences: ["静脉曲张患者", "术后恢复"]
-registrationNo: "京械注准20242090XXX"
 buyUrl: ""
 image: "/images/product-level2-changtong.jpg"
 toc: true
@@ -73,7 +72,6 @@ toc: true
 | 材质 | 锦纶70% + 氨纶30% |
 | 脚尖设计 | 开放款 |
 | 防滑设计 | 硅胶防滑条（吊带可选） |
-| 医疗器械注册证号 | 京械注准20242090XXX |
 
 ## 尺码选择
 

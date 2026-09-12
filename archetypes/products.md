@@ -10,7 +10,6 @@ summary: ""
 categories: []
 pressures: []
 audiences: []
-registrationNo: ""
 buyUrl: ""
 toc: true
 draft: false
@@ -37,7 +36,6 @@ draft: false
 | 可选尺码 | |
 | 颜色 | |
 | 材质 | |
-| 医疗器械注册证号 | |
 
 ## 尺码选择
 

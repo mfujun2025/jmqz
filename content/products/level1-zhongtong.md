@@ -10,7 +10,6 @@ summary: "一级压力预防型弹力袜，适合久站久坐人群日常保健�
 categories: ["一级压力", "中筒款"]
 pressures: ["一级压力"]
 audiences: ["久站人群", "办公族"]
-registrationNo: "京械注准20242090XXX"
 buyUrl: ""
 image: "/images/product-level1-zhongtong.jpg"
 toc: true
@@ -53,7 +52,6 @@ toc: true
 | 可选尺码 | S / M / L / XL |
 | 颜色 | 肤色 / 黑色 |
 | 材质 | 锦纶75% + 氨纶25% |
-| 医疗器械注册证号 | 京械注准20242090XXX |
 | 生产企业 | 舒脉康医疗器械有限公司 |
 
 ## 尺码选择

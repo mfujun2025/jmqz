@@ -10,7 +10,6 @@ summary: "二级压力治疗型弹力袜，适合轻度至中度静脉曲张患�
 categories: ["二级压力", "中筒款"]
 pressures: ["二级压力"]
 audiences: ["静脉曲张患者", "久站人群"]
-registrationNo: "京械注准20242090XXX"
 buyUrl: ""
 image: "/images/product-level2-zhongtong.jpg"
 toc: true
@@ -58,7 +57,6 @@ toc: true
 | 颜色 | 肤色 / 黑色 / 深灰 |
 | 材质 | 锦纶72% + 氨纶28% |
 | 脚尖设计 | 闭合款 / 开放款 |
-| 医疗器械注册证号 | 京械注准20242090XXX |
 | 生产企业 | 舒脉康医疗器械有限公司 |
 
 ## 尺码选择

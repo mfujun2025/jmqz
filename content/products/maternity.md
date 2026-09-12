@@ -10,7 +10,6 @@ summary: "专为孕妇设计的连裤款弹力袜，腹部可调节，适应孕�
 categories: ["孕妇专用", "连裤款"]
 pressures: ["一级压力", "二级压力"]
 audiences: ["孕妇"]
-registrationNo: "京械注准20242090XXX"
 buyUrl: ""
 image: "/images/product-maternity.jpg"
 toc: true
@@ -87,7 +86,6 @@ toc: true
 | 颜色 | 肤色 / 黑色 |
 | 材质 | 锦纶73% + 氨纶27% |
 | 腹部设计 | 高弹可调节，无压区 |
-| 医疗器械注册证号 | 京械注准20242090XXX |
 
 ## 尺码选择
 
