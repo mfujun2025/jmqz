@@ -137,4 +137,4 @@ toc: true
 - [静脉曲张能泡脚吗？热水泡脚为什么反而加重病情？](/blog/can-you-soak-feet-with-varicose-veins/)
 - [静脉曲张能泡温泉吗？高温、热水澡、桑拿对静脉的影响全解析](/blog/varicose-veins-hot-spring-sauna-guide/)
 - [腿肿了是静脉曲张，还是心脏、肾脏、淋巴的问题？一文教你分清](/blog/leg-swelling-differential-diagnosis-guide/)
-- [医用弹力袜](/products/compression-stockings/)
+- [二级压力医用弹力袜（治疗型）](/products/level2-zhongtong/)
